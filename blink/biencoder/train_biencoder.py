@@ -32,7 +32,7 @@ import logging
 
 import blink.candidate_ranking.utils as utils
 import blink.biencoder.data_process as data
-from blink.biencoder.zeshel_utils import DOC_PATH, WORLDS, world_to_id
+from blink.biencoder.zeshel_utils import WORLDS, world_to_id
 from blink.common.optimizer import get_bert_optimizer
 from blink.common.params import BlinkParser
 

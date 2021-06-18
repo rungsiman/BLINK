@@ -8,8 +8,9 @@
 # Utility code for zeshel dataset
 import json
 import torch
+import os
 
-DOC_PATH = "/private/home/ledell/zeshel/data/documents/"
+# DOC_PATH = "/private/home/ledell/zeshel/data/documents/"
 
 WORLDS = [
     'american_football',
@@ -47,7 +48,7 @@ def load_entity_dict_zeshel(logger, params):
         end_idx = 16
     # load data
     for i, src in enumerate(WORLDS[start_idx:end_idx]):
-        fname = DOC_PATH + src + ".json"
+        fname = os.path.join(params["zeshel_path"], f'documents/{src}.json')
         cur_dict = {}
         doc_list = []
         src_id = world_to_id[src]

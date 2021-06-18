@@ -89,6 +89,12 @@ class BlinkParser(argparse.ArgumentParser):
             type=bool,
             help="Whether the dataset is from zeroshot.",
         )
+        parser.add_argument(
+            "--zeshel_path",
+            default="data/zeshel/original",
+            type=str,
+            help="The path to zeshel's original data."
+        )
 
     def add_model_args(self, args=None):
         """

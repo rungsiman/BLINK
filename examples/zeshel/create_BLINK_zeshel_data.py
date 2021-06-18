@@ -126,11 +126,14 @@ def convert_data(params, entity_dict, entity_map, mode):
             ent_text = entity_dict[src][k]["text"]
 
             example = {}
+            example["context_wikias_id"] = item["context_document_id"]
             example["context_left"] = ' '.join(mention_context_left)
             example['context_right'] = ' '.join(mention_context_right)
             example["mention"] = mention
+            example["mention_id"] = item["mention_id"]
             example["label"] = ent_text
             example["label_id"] = k
+            example["label_wikias_id"] = label_doc_id
             example['label_title'] = ent_title
             example['world'] = src
             fout.write(json.dumps(example))
