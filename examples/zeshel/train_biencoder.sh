@@ -4,4 +4,4 @@ python blink/biencoder/train_biencoder.py \
   --train_batch_size 128 \
   --num_train_epochs 5 \
   --data_path data/zeshel/blink_format \
-  --output_path /root/BLINK/output/zeshel/models
+  --output_path output/zeshel/models
