@@ -1,8 +1,14 @@
+export CUDA_VISIBLE_DEVICES=1,
+export PYTHONPATH=/home/rungsiman/BLINK
 python blink/biencoder/eval_biencoder.py \
-  --mode train,valid,test \
-  --top_k 64 \
-  --eval_batch_size 128 \
-  --path_to_model output/zeshel/models/pytorch_model.bin \
+  --path_to_model models/zeshel/biencoder/pytorch_model.bin \
   --data_path data/zeshel/blink_format \
-  --zeshel_path ~/KILT/original_data/zeshel \
-  --output_path output/zeshel/eval
+  --output_path models/zeshel \
+  --encode_batch_size 8 \
+  --eval_batch_size 1 \
+  --top_k 64 \
+  --save_topk_result \
+  --bert_model bert-base-uncased \
+  --mode train,valid,test \
+  --zeshel True \
+  # --data_parallel
