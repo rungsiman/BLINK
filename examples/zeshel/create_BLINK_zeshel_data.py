@@ -102,7 +102,7 @@ def convert_data(params, entity_dict, entity_map, mode):
             cnt += 1
             line = line.rstrip()
             item = json.loads(line)
-            mention = item["text"].lower()
+            mention = item["text"]
             src = item["corpus"]
             label_doc_id = item["label_document_id"]
             orig_doc_id = item["context_document_id"]
@@ -111,7 +111,7 @@ def convert_data(params, entity_dict, entity_map, mode):
 
             # add context around the mention as well
             orig_id = entity_map[src][orig_doc_id]
-            text = entity_dict[src][orig_id]["text"].lower()
+            text = entity_dict[src][orig_id]["text"]
             tokens = text.split(" ")
 
             assert mention == ' '.join(tokens[start:end + 1]) 
